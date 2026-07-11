@@ -26,8 +26,15 @@ public class OrderItem {
 	//Order Item to Product
     @ManyToOne
     @JoinColumn(name="product_id")
-    private Products product;
+    private Products product;       
 
+    
+    
+    
+    
+    
+    
+    
 	public Integer getOredrItemId() {
 		return oredrItemId;
 	}
@@ -69,6 +76,12 @@ public class OrderItem {
 	}
 	public OrderItem() {
 		
+	}
+
+	@Override
+	public String toString() {
+		return "OrderItem [oredrItemId=" + oredrItemId + ", orderId=" + orderId + ", quantity=" + quantity
+				+ ", product=" + product + "]";
 	}
 	
     
