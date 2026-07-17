@@ -35,6 +35,9 @@ public class OrderItem {
     
     
     
+    
+    
+    
 	public Integer getOredrItemId() {
 		return oredrItemId;
 	}
