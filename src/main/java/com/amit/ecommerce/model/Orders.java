@@ -37,9 +37,11 @@ public class Orders {
 	
 	private double totalAmount;
 	
+	//multiple order can plece one user
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
+	 
 	
 	// One to Many with Order Item
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
