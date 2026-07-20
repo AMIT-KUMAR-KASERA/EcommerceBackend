@@ -16,6 +16,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -44,14 +45,85 @@ public class Orders {
 	 
 	
 	// One to Many with Order Item
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "order",cascade  = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<OrderItem> orderItem=new ArrayList<>();
 	
 	
 	//One to One with Payment Table
-	
+	@OneToOne
+	@JoinColumn(name="payment_id")
+	private Payments payments;	
 	
 	//One to One with Shipping Entity
+	@OneToOne
+	private ShippingDetails shipingDetails;
+	
+	
+
+	public Integer getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+
+	public LocalDateTime getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(LocalDateTime orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public List<OrderItem> getOrderItem() {
+		return orderItem;
+	}
+
+	public void setOrderItem(List<OrderItem> orderItem) {
+		this.orderItem = orderItem;
+	}
+
+	public Payments getPayments() {
+		return payments;
+	}
+
+	public void setPayments(Payments payments) {
+		this.payments = payments;
+	}
+
+	public ShippingDetails getShipingDetails() {
+		return shipingDetails;
+	}
+
+	public void setShipingDetails(ShippingDetails shipingDetails) {
+		this.shipingDetails = shipingDetails;
+	}
+	
 	
 	
 }

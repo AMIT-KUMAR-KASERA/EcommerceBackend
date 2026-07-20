@@ -18,7 +18,7 @@ public class OrderItem {
 	
 	
 	@Column(name="order_id")
-	private Integer orderId;
+	private Orders order;
 	
 	@Column(name="ord_qty")
 	private Integer quantity;
@@ -38,54 +38,8 @@ public class OrderItem {
     
     
     
-	public Integer getOredrItemId() {
-		return oredrItemId;
-	}
-
-	public void setOredrItemId(Integer oredrItemId) {
-		this.oredrItemId = oredrItemId;
-	}
-
-	public Integer getOrderId() {
-		return orderId;
-	}
-
-	public void setOrderId(Integer orderId) {
-		this.orderId = orderId;
-	}
-
-	public Integer getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
-
-	public Products getProduct() {
-		return product;
-	}
-
-	public void setProduct(Products product) {
-		this.product = product;
-	}
-
-	public OrderItem(Integer oredrItemId, Integer orderId, Integer quantity, Products product) {
-		super();
-		this.oredrItemId = oredrItemId;
-		this.orderId = orderId;
-		this.quantity = quantity;
-		this.product = product;
-	}
-	public OrderItem() {
-		
-	}
-
-	@Override
-	public String toString() {
-		return "OrderItem [oredrItemId=" + oredrItemId + ", orderId=" + orderId + ", quantity=" + quantity
-				+ ", product=" + product + "]";
-	}
+	
+	
 	
     
 	

@@ -63,6 +63,10 @@ public class User {
 	
 	
 	//One to Many with Payments
-	
+	 @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	 private List<Payments> payments=new ArrayList<>();
+	 
 	//One to Many with Reviews
+	 @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+	 private List<Review> reviews =new ArrayList<>();
 }
